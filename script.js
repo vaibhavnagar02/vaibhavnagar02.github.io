@@ -6,7 +6,7 @@ const profile = {
     "I focus on practical cybersecurity through labs, CTF-style problem solving, and secure software practices.",
   about:
     "I am building hands-on skills across offensive and defensive security, including vulnerability assessment, Linux-based security workflows, and scripting for automation.",
-  resumeUrl: "./assets/Vaibhav_Nagar_Resume.pdf",
+  resumeUrl: "./Vaibhav_Nagar_Resume.pdf",
   githubUrl: "https://github.com/vaibhavnagar02",
   linkedinUrl: "https://www.linkedin.com/in/vaibhav-nagar2002/",
   email: "vaibhavsinghnagar@gmail.com",
