@@ -7,32 +7,33 @@
   <meta name="description" content="Portfolio of Vaibhav Nagar" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-glow"></div>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
 
   <header class="header">
     <div class="container nav-wrap">
       <a class="brand" href="#top">VN</a>
       <nav class="nav">
         <a href="#profile">Profile</a>
-        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#interests">Interests</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <section id="profile" class="hero container">
-      <p class="eyebrow" id="role-text">AI/ML Engineer | Cybersecurity Enthusiast</p>
+    <section id="profile" class="hero container reveal">
+      <p id="role-text" class="eyebrow">AI/ML Engineer | Cybersecurity Enthusiast</p>
       <h1 id="name-text">Vaibhav Nagar</h1>
-      <p class="summary" id="bio-text">
-        I build practical AI systems and secure software with a strong product mindset.
+      <p id="bio-text" class="summary">
+        Building practical AI systems and secure software with a product-first mindset.
       </p>
       <div class="hero-actions">
         <a id="resume-link" class="btn btn-primary" href="./Vaibhav_Nagar_Resume.pdf" download>Download Resume</a>
@@ -41,38 +42,39 @@
       </div>
     </section>
 
-    <section id="education" class="section container">
-      <div class="section-head">
-        <h2>Education</h2>
-      </div>
-      <article class="edu-card">
-        <h3>University of Sydney</h3>
-        <p id="edu-details">Currently studying in Sydney, focused on advanced computing, AI systems, and secure engineering practices.</p>
-      </article>
-    </section>
-
-    <section id="projects" class="section container">
+    <section id="projects" class="section container reveal">
       <div class="section-head section-row">
         <h2>Projects</h2>
-        <a id="see-all-projects" class="see-all" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">See All</a>
+        <a id="see-all-projects" class="see-all" href="#" target="_blank" rel="noreferrer">See All</a>
       </div>
       <div id="projects-grid" class="projects-grid"></div>
     </section>
 
-    <section id="experience" class="section container">
-      <div class="section-head">
+    <section id="experience" class="section reveal">
+      <div class="container section-head">
         <h2>Experience</h2>
-        <p>Scroll down to move through each internship.</p>
+        <p>Scroll to transition through each internship.</p>
       </div>
-      <div id="experience-track" class="experience-track"></div>
+
+      <div class="experience-shell">
+        <div class="experience-pin">
+          <div id="exp-progress" class="exp-progress"></div>
+          <div id="experience-stage" class="experience-stage"></div>
+        </div>
+      </div>
     </section>
 
-    <section id="interests" class="section container">
+    <section id="interests" class="section container reveal">
       <div class="section-head"><h2>Interests</h2></div>
       <div id="interests-list" class="chips"></div>
     </section>
 
-    <section id="contact" class="section container">
+    <section id="education" class="section container reveal">
+      <div class="section-head"><h2>Education</h2></div>
+      <div id="education-grid" class="edu-grid"></div>
+    </section>
+
+    <section id="contact" class="section container reveal">
       <div class="section-head"><h2>Contact Me</h2></div>
       <div class="contact-grid">
         <a id="phone-link" href="#"></a>
