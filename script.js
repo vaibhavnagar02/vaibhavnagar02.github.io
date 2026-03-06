@@ -1,201 +1,136 @@
-const profile = {
-  name: "Vaibhav Nagar",
-  role: "AI/ML Engineer | Cybersecurity Enthusiast",
-  bio: "Building practical AI systems, secure software, and production-ready products.",
-  phone: "+61 0432199478",
-  email: "vaibhavsinghnagar@gmail.com",
-  githubUrl: "https://github.com/vaibhavnagar02",
-  linkedinUrl: "https://www.linkedin.com/in/vaibhav-nagar2002/",
-  resumeUrl: "./Vaibhav_Nagar_Resume.pdf",
-  education: "University of Sydney - Advanced studies in computing, AI systems, and secure engineering.",
-  interests: [
-    "Applied AI",
-    "Cybersecurity",
-    "MLOps",
-    "Cloud Deployment",
-    "System Design",
-    "Product Engineering"
-  ]
-};
+const GITHUB_USERNAME = "vaibhavnagar02";
+const LINKEDIN_URL = "https://www.linkedin.com/in/vaibhav-nagar2002/";
 
-const projects = [
+const timelineData = [
   {
-    title: "Fine-Tuned LLM Contract Assistant",
-    description: "Contract-to-MVEL transformation pipeline using Pinecone and Azure OpenAI.",
-    repoUrl: "https://github.com/vaibhavnagar02"
+    period: "2022 - 2023",
+    title: "Foundation in AI/ML and Data Science",
+    details: "Built strong fundamentals in Python, statistics, ML algorithms, and data preprocessing through academic and personal projects.",
+    learning: "Learned that clean data pipelines and feature engineering often matter more than complex models."
   },
   {
-    title: "Facial Recognition Attendance System",
-    description: "Computer vision attendance product with MERN stack and MongoDB reporting.",
-    repoUrl: "https://github.com/vaibhavnagar02"
+    period: "2023 - 2024",
+    title: "Applied Projects and Model Development",
+    details: "Worked on practical AI/ML projects, model training workflows, and end-to-end experimentation for real use cases.",
+    learning: "Improved at choosing metrics based on business goals rather than only model accuracy."
   },
   {
-    title: "ResumeGPT",
-    description: "Recruitment assistant with LaMini Flan T5, LangChain, and FAISS search.",
-    repoUrl: "https://github.com/vaibhavnagar02"
-  },
-  {
-    title: "Hotel Channel Manager POC",
-    description: "Full stack channel manager concept for lower-segment hotel operations.",
-    repoUrl: "https://github.com/vaibhavnagar02"
-  },
-  {
-    title: "Automated Mass Emailer",
-    description: "SMTP + Python workflow for scalable business communication automation.",
-    repoUrl: "https://github.com/vaibhavnagar02"
-  },
-  {
-    title: "Audio Diarization & Sentiment Pipeline",
-    description: "Speech segmentation + transformer-based tone analysis with scalable processing.",
-    repoUrl: "https://github.com/vaibhavnagar02"
+    period: "2024 - Present",
+    title: "Engineering-Focused AI Development",
+    details: "Focused on building deployable, maintainable AI systems with emphasis on reproducibility, scaling, and impact.",
+    learning: "Shipping reliable solutions requires MLOps mindset, versioning, monitoring, and iterative improvement."
   }
 ];
 
-const experiences = [
-  {
-    role: "ML Engineer",
-    company: "Lumberfi",
-    period: "03/2024 - 06/2024",
-    location: "Bangalore",
-    points: [
-      "Delivered a fine-tuned LLM chatbot using Pinecone and Azure OpenAI for contract-to-MVEL conversion.",
-      "Learned Docker and Kubernetes through Azure deployment work.",
-      "Handled complex extraction from union contracts and contractor files."
-    ],
-    learning: "How to ship LLM solutions in production pipelines, not just prototypes."
-  },
-  {
-    role: "Full Stack Engineer",
-    company: "Yatra",
-    period: "02/2024 - 03/2024",
-    location: "Gurgaon",
-    points: [
-      "Built a full stack channel manager for lower-segment hotels.",
-      "Contributed to NanoCM, automated report generation, and dynamic mass emailer POCs.",
-      "Implemented SMTP-driven automation with Python and networking concepts."
-    ],
-    learning: "How to convert real business pain points into fast, practical product features."
-  },
-  {
-    role: "AI/ML Engineer",
-    company: "Waisl",
-    period: "05/2023 - 01/2024",
-    location: "Delhi",
-    points: [
-      "Built facial recognition attendance system with computer vision, MongoDB, and MERN.",
-      "Worked on ResumeGPT using LaMini Flan T5, LangChain, and FAISS.",
-      "Improved recruitment process throughput using LLM-assisted workflows."
-    ],
-    learning: "How AI models create measurable operational impact when connected to workflows."
-  },
-  {
-    role: "Data Scientist",
-    company: "thelightbulb.ai",
-    period: "06/2022 - 12/2022",
-    location: "Mumbai",
-    points: [
-      "Built audio diarization from scratch with segmentation and HuBERT transformer classification.",
-      "Used Golang for efficient concurrent processing in sentiment analysis workloads.",
-      "Worked directly with international clients including Warner Brothers."
-    ],
-    learning: "How to balance research depth with client-facing delivery and communication."
+function el(tag, className, html) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (html) node.innerHTML = html;
+  return node;
+}
+
+async function loadGitHubProfile() {
+  try {
+    const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+    if (!res.ok) throw new Error("Profile fetch failed");
+    const profile = await res.json();
+
+    const name = document.getElementById("name");
+    const avatar = document.getElementById("avatar");
+    const bio = document.getElementById("bio");
+
+    if (profile.name) name.textContent = profile.name;
+    if (profile.avatar_url) avatar.src = profile.avatar_url;
+    if (profile.bio) bio.textContent = profile.bio;
+  } catch (err) {
+    console.error(err);
   }
-];
-
-function applyProfile() {
-  document.title = `${profile.name} | Portfolio`;
-  document.getElementById("name-text").textContent = profile.name;
-  document.getElementById("role-text").textContent = profile.role;
-  document.getElementById("bio-text").textContent = profile.bio;
-  document.getElementById("edu-details").textContent = profile.education;
-  document.getElementById("footer-name").textContent = profile.name;
-
-  const resume = document.getElementById("resume-link");
-  const github = document.getElementById("github-link");
-  const linkedin = document.getElementById("linkedin-link");
-  const phone = document.getElementById("phone-link");
-  const email = document.getElementById("email-link");
-  const cGithub = document.getElementById("contact-github");
-  const cLinkedin = document.getElementById("contact-linkedin");
-  const seeAll = document.getElementById("see-all-projects");
-
-  resume.href = profile.resumeUrl;
-  github.href = profile.githubUrl;
-  linkedin.href = profile.linkedinUrl;
-  cGithub.href = profile.githubUrl;
-  cLinkedin.href = profile.linkedinUrl;
-  seeAll.href = profile.githubUrl;
-
-  phone.href = `tel:${profile.phone.replace(/\s+/g, "")}`;
-  phone.textContent = `Phone: ${profile.phone}`;
-  email.href = `mailto:${profile.email}`;
-  email.textContent = `Email: ${profile.email}`;
 }
 
-function renderProjects() {
-  const grid = document.getElementById("projects-grid");
-  projects.forEach((p) => {
-    const card = document.createElement("article");
-    card.className = "project-card";
+async function loadGitHubProjects() {
+  const grid = document.getElementById("projectsGrid");
+  grid.innerHTML = `<p>Loading projects...</p>`;
 
-    const h3 = document.createElement("h3");
-    h3.textContent = p.title;
+  try {
+    const res = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`
+    );
+    if (!res.ok) throw new Error("Repo fetch failed");
 
-    const d = document.createElement("p");
-    d.textContent = p.description;
+    const repos = await res.json();
+    const top6 = repos
+      .filter((r) => !r.fork)
+      .sort((a, b) => (b.stargazers_count + b.forks_count) - (a.stargazers_count + a.forks_count))
+      .slice(0, 6);
 
-    const a = document.createElement("a");
-    a.href = p.repoUrl;
-    a.target = "_blank";
-    a.rel = "noreferrer";
-    a.textContent = "View Repo";
+    if (!top6.length) {
+      grid.innerHTML = `<p>No public repositories found.</p>`;
+      return;
+    }
 
-    card.append(h3, d, a);
-    grid.appendChild(card);
-  });
-}
+    grid.innerHTML = "";
+    top6.forEach((repo) => {
+      const card = el("article", "project-card");
+      const imageUrl = `https://opengraph.githubassets.com/${repo.id}/${repo.full_name}`;
 
-function renderExperience() {
-  const track = document.getElementById("experience-track");
-  experiences.forEach((e) => {
-    const card = document.createElement("article");
-    card.className = "exp-card";
-
-    const head = document.createElement("div");
-    head.className = "exp-head";
-    head.innerHTML = `<h3>${e.role}, ${e.company}</h3><strong>${e.location}</strong>`;
-
-    const meta = document.createElement("p");
-    meta.className = "exp-meta";
-    meta.textContent = e.period;
-
-    const ul = document.createElement("ul");
-    e.points.forEach((point) => {
-      const li = document.createElement("li");
-      li.textContent = point;
-      ul.appendChild(li);
+      card.innerHTML = `
+        <img src="${imageUrl}" alt="${repo.name} preview" loading="lazy" />
+        <div class="project-content">
+          <h3>${repo.name}</h3>
+          <p>${repo.description ? repo.description : "No description provided."}</p>
+          <div class="project-meta">★ ${repo.stargazers_count} • ${repo.language || "Codebase"}</div>
+          <p><a href="${repo.html_url}" target="_blank" rel="noreferrer">Open Project</a></p>
+        </div>
+      `;
+      grid.appendChild(card);
     });
+  } catch (err) {
+    console.error(err);
+    grid.innerHTML = `<p>Unable to load projects right now. Please try again later.</p>`;
+  }
+}
 
-    const learnBox = document.createElement("div");
-    learnBox.className = "learn-box";
-    learnBox.innerHTML = `<h4>Key Learning</h4><p>${e.learning}</p>`;
+function renderTimeline() {
+  const list = document.getElementById("timelineList");
+  list.innerHTML = "";
 
-    card.append(head, meta, ul, learnBox);
-    track.appendChild(card);
+  timelineData.forEach((item) => {
+    const row = el("div", "timeline-item");
+    row.innerHTML = `
+      <div class="timeline-main">
+        <h4>${item.period} • ${item.title}</h4>
+        <p>${item.details}</p>
+      </div>
+      <div class="timeline-learning">
+        <h4>Key Learning</h4>
+        <p>${item.learning}</p>
+      </div>
+    `;
+    list.appendChild(row);
   });
 }
 
-function renderInterests() {
-  const list = document.getElementById("interests-list");
-  profile.interests.forEach((item) => {
-    const chip = document.createElement("span");
-    chip.textContent = item;
-    list.appendChild(chip);
-  });
+function setStaticLinks() {
+  const emailLink = document.getElementById("emailLink");
+  const phoneLink = document.getElementById("phoneLink");
+
+  // Replace with your real details from resume.
+  const email = "your-email@example.com";
+  const phone = "+61 0000 000 000";
+
+  emailLink.href = `mailto:${email}`;
+  emailLink.textContent = email;
+
+  phoneLink.href = `tel:${phone.replace(/\s/g, "")}`;
+  phoneLink.textContent = phone;
+
+  const linkedInAnchors = [...document.querySelectorAll('a[href*="linkedin.com"]')];
+  linkedInAnchors.forEach((a) => (a.href = LINKEDIN_URL));
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
-applyProfile();
-renderProjects();
-renderExperience();
-renderInterests();
+(async function init() {
+  setStaticLinks();
+  renderTimeline();
+  await loadGitHubProfile();
+  await loadGitHubProjects();
+})();
