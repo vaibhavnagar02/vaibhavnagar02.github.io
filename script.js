@@ -16,18 +16,54 @@ const profile = {
     "Computer Vision"
   ],
   education: [
-    { school: "University of Sydney", detail: "Advanced studies in computing, AI systems, and secure engineering." },
-    { school: "Manipal University Jaipur", detail: "Bachelors degree, majoring in Data Science." }
+    {
+      school: "University of Sydney",
+      detail: "Advanced studies in computing, AI systems, and secure engineering."
+    },
+    {
+      school: "Manipal University Jaipur",
+      detail: "Bachelors degree, majoring in Data Science."
+    }
   ]
 };
 
 const projects = [
-  { title: "Fine-Tuned LLM Contract Assistant", description: "Contract-to-MVEL pipeline using Pinecone + Azure OpenAI.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-1.jpg" },
-  { title: "Facial Recognition Attendance", description: "Computer vision attendance system with MERN and MongoDB.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-2.jpg" },
-  { title: "ResumeGPT", description: "Recruitment intelligence with LaMini Flan T5, LangChain, and FAISS.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-3.jpg" },
-  { title: "Hotel Channel Manager", description: "Full stack channel manager concept for budget hotels.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-4.jpg" },
-  { title: "Dynamic Mass Emailer", description: "SMTP + Python workflow for automated business communication.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-5.jpg" },
-  { title: "Audio Diarization Pipeline", description: "Speech segmentation + transformer-based tone analysis.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-6.jpg" }
+  {
+    title: "Fine-Tuned LLM Contract Assistant",
+    description: "Contract-to-MVEL pipeline using Pinecone + Azure OpenAI.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-1.jpg"
+  },
+  {
+    title: "Facial Recognition Attendance",
+    description: "Computer vision attendance system with MERN and MongoDB.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-2.jpg"
+  },
+  {
+    title: "ResumeGPT",
+    description: "Recruitment intelligence with LaMini Flan T5, LangChain, and FAISS.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-3.jpg"
+  },
+  {
+    title: "Hotel Channel Manager",
+    description: "Full stack channel manager concept for budget hotels.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-4.jpg"
+  },
+  {
+    title: "Dynamic Mass Emailer",
+    description: "SMTP + Python workflow for automated business communication.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-5.jpg"
+  },
+  {
+    title: "Audio Diarization Pipeline",
+    description: "Speech segmentation + transformer-based tone analysis.",
+    repoUrl: "https://github.com/vaibhavnagar02",
+    image: "./images/project-6.jpg"
+  }
 ];
 
 const experiences = [
