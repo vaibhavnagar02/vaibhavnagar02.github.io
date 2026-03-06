@@ -16,54 +16,18 @@ const profile = {
     "Computer Vision"
   ],
   education: [
-    {
-      school: "University of Sydney",
-      detail: "Advanced studies in computing, AI systems, and secure engineering."
-    },
-    {
-      school: "Manipal University Jaipur",
-      detail: "Bachelors degree, majoring in Data Science."
-    }
+    { school: "University of Sydney", detail: "Advanced studies in computing, AI systems, and secure engineering." },
+    { school: "Manipal University Jaipur", detail: "Bachelors degree, majoring in Data Science." }
   ]
 };
 
 const projects = [
-  {
-    title: "Fine-Tuned LLM Contract Assistant",
-    description: "Contract-to-MVEL pipeline using Pinecone + Azure OpenAI.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-1.jpg"
-  },
-  {
-    title: "Facial Recognition Attendance",
-    description: "Computer vision attendance system with MERN and MongoDB.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-2.jpg"
-  },
-  {
-    title: "ResumeGPT",
-    description: "Recruitment intelligence with LaMini Flan T5, LangChain, and FAISS.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-3.jpg"
-  },
-  {
-    title: "Hotel Channel Manager",
-    description: "Full stack channel manager concept for budget hotels.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-4.jpg"
-  },
-  {
-    title: "Dynamic Mass Emailer",
-    description: "SMTP + Python workflow for automated business communication.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-5.jpg"
-  },
-  {
-    title: "Audio Diarization Pipeline",
-    description: "Speech segmentation + transformer-based tone analysis.",
-    repoUrl: "https://github.com/vaibhavnagar02",
-    image: "./images/project-6.jpg"
-  }
+  { title: "Fine-Tuned LLM Contract Assistant", description: "Contract-to-MVEL pipeline using Pinecone + Azure OpenAI.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-1.jpg" },
+  { title: "Facial Recognition Attendance", description: "Computer vision attendance system with MERN and MongoDB.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-2.jpg" },
+  { title: "ResumeGPT", description: "Recruitment intelligence with LaMini Flan T5, LangChain, and FAISS.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-3.jpg" },
+  { title: "Hotel Channel Manager", description: "Full stack channel manager concept for budget hotels.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-4.jpg" },
+  { title: "Dynamic Mass Emailer", description: "SMTP + Python workflow for automated business communication.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-5.jpg" },
+  { title: "Audio Diarization Pipeline", description: "Speech segmentation + transformer-based tone analysis.", repoUrl: "https://github.com/vaibhavnagar02", image: "./images/project-6.jpg" }
 ];
 
 const experiences = [
@@ -117,32 +81,52 @@ const experiences = [
   }
 ];
 
+function byId(id) {
+  return document.getElementById(id);
+}
+
+function safeSetText(id, text) {
+  const el = byId(id);
+  if (el) el.textContent = text;
+}
+
+function safeSetHref(id, href) {
+  const el = byId(id);
+  if (el) el.href = href;
+}
+
 function applyProfile() {
   document.title = `${profile.name} | Portfolio`;
-  document.getElementById("name-text").textContent = profile.name;
-  document.getElementById("role-text").textContent = profile.role;
-  document.getElementById("bio-text").textContent = profile.bio;
-  document.getElementById("footer-name").textContent = profile.name;
+  safeSetText("name-text", profile.name);
+  safeSetText("role-text", profile.role);
+  safeSetText("bio-text", profile.bio);
+  safeSetText("footer-name", profile.name);
 
-  document.getElementById("resume-link").href = profile.resumeUrl;
-  document.getElementById("github-link").href = profile.githubUrl;
-  document.getElementById("linkedin-link").href = profile.linkedinUrl;
-  document.getElementById("see-all-projects").href = profile.githubUrl;
+  safeSetHref("resume-link", profile.resumeUrl);
+  safeSetHref("github-link", profile.githubUrl);
+  safeSetHref("linkedin-link", profile.linkedinUrl);
+  safeSetHref("see-all-projects", profile.githubUrl);
+  safeSetHref("contact-github", profile.githubUrl);
+  safeSetHref("contact-linkedin", profile.linkedinUrl);
 
-  const phoneLink = document.getElementById("phone-link");
-  phoneLink.href = `tel:${profile.phone.replace(/\s+/g, "")}`;
-  phoneLink.textContent = `Phone: ${profile.phone}`;
+  const phoneLink = byId("phone-link");
+  if (phoneLink) {
+    phoneLink.href = `tel:${profile.phone.replace(/\s+/g, "")}`;
+    phoneLink.textContent = `Phone: ${profile.phone}`;
+  }
 
-  const emailLink = document.getElementById("email-link");
-  emailLink.href = `mailto:${profile.email}`;
-  emailLink.textContent = `Email: ${profile.email}`;
-
-  document.getElementById("contact-github").href = profile.githubUrl;
-  document.getElementById("contact-linkedin").href = profile.linkedinUrl;
+  const emailLink = byId("email-link");
+  if (emailLink) {
+    emailLink.href = `mailto:${profile.email}`;
+    emailLink.textContent = `Email: ${profile.email}`;
+  }
 }
 
 function renderProjects() {
-  const grid = document.getElementById("projects-grid");
+  const grid = byId("projects-grid");
+  if (!grid) return;
+
+  grid.innerHTML = "";
   projects.forEach((p) => {
     const card = document.createElement("article");
     card.className = "project-card tilt";
@@ -162,7 +146,10 @@ function renderProjects() {
 }
 
 function renderExperience() {
-  const list = document.getElementById("experience-list");
+  const list = byId("experience-list");
+  if (!list) return;
+
+  list.innerHTML = "";
   experiences.forEach((exp) => {
     const card = document.createElement("article");
     card.className = "exp-item";
@@ -182,7 +169,10 @@ function renderExperience() {
 }
 
 function renderInterests() {
-  const list = document.getElementById("interests-list");
+  const list = byId("interests-list");
+  if (!list) return;
+
+  list.innerHTML = "";
   profile.interests.forEach((item) => {
     const chip = document.createElement("span");
     chip.textContent = item;
@@ -191,7 +181,10 @@ function renderInterests() {
 }
 
 function renderEducation() {
-  const grid = document.getElementById("education-grid");
+  const grid = byId("education-grid");
+  if (!grid) return;
+
+  grid.innerHTML = "";
   profile.education.forEach((e) => {
     const card = document.createElement("article");
     card.className = "edu-card";
@@ -201,15 +194,16 @@ function renderEducation() {
 }
 
 function initReveal() {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    },
-    { threshold: 0.12 }
-  );
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  const nodes = document.querySelectorAll(".reveal");
+  if (!nodes.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.12 });
+
+  nodes.forEach((el) => io.observe(el));
 }
 
 function initTilt() {
@@ -226,11 +220,13 @@ function initTilt() {
   });
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
-applyProfile();
-renderProjects();
-renderExperience();
-renderInterests();
-renderEducation();
-initReveal();
-initTilt();
+document.addEventListener("DOMContentLoaded", () => {
+  safeSetText("year", new Date().getFullYear());
+  applyProfile();
+  renderProjects();
+  renderExperience();
+  renderInterests();
+  renderEducation();
+  initReveal();
+  initTilt();
+});
