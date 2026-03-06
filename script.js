@@ -1,113 +1,176 @@
 const profile = {
   name: "Vaibhav Nagar",
-  initials: "VN",
-  role: "Cybersecurity Student",
-  shortBio:
-    "I focus on practical cybersecurity through labs, CTF-style problem solving, and secure software practices.",
-  about:
-    "I am building hands-on skills across offensive and defensive security, including vulnerability assessment, Linux-based security workflows, and scripting for automation.",
-  resumeUrl: "./Vaibhav_Nagar_Resume.pdf",
+  role: "AI/ML Engineer | Aspiring Cybersecurity Professional",
+  bio: "Building practical AI systems and secure software. I enjoy solving real-world engineering problems across ML, backend, and product delivery.",
+  phone: "+61 0432199478",
+  email: "vaibhavsinghnagar@gmail.com",
   githubUrl: "https://github.com/vaibhavnagar02",
   linkedinUrl: "https://www.linkedin.com/in/vaibhav-nagar2002/",
-  email: "vaibhavsinghnagar@gmail.com",
-  skills: [
-    "Network Security",
-    "Penetration Testing",
-    "Python",
-    "SIEM",
-    "Linux",
-    "Threat Modeling"
+  resumeUrl: "./Vaibhav_Nagar_Resume.pdf",
+  interests: [
+    "Cybersecurity",
+    "LLM Applications",
+    "MLOps",
+    "Cloud Deployment",
+    "System Design",
+    "Computer Vision"
   ]
 };
 
 const projects = [
   {
-    title: "Web App Security Scanner",
-    description:
-      "Automates OWASP Top 10 checks against target web apps and generates a concise findings report.",
-    repoUrl: "https://github.com/your-username/web-security-scanner",
-    tags: ["Python", "OWASP", "Automation"]
+    title: "Fine-Tuned LLM Contract Assistant",
+    description: "Built an LLM workflow to transform contract content into structured MVEL code for downstream product use.",
+    repoUrl: "https://github.com/vaibhavnagar02"
   },
   {
-    title: "SOC Alert Triage Dashboard",
-    description:
-      "Simple dashboard to parse and prioritize incoming security alerts for faster investigation.",
-    repoUrl: "https://github.com/your-username/soc-triage-dashboard",
-    tags: ["JavaScript", "SIEM", "Detection"]
+    title: "Facial Recognition Attendance System",
+    description: "Developed a computer-vision attendance platform with MERN stack and MongoDB-backed reporting.",
+    repoUrl: "https://github.com/vaibhavnagar02"
   },
   {
-    title: "CTF Writeups",
-    description:
-      "Collection of challenge solutions focused on web exploitation, crypto, and binary analysis.",
-    repoUrl: "https://github.com/your-username/ctf-writeups",
-    tags: ["CTF", "Reverse Engineering", "Learning"]
+    title: "ResumeGPT",
+    description: "Contributed to an LLM-powered recruitment tool using LaMini Flan T5, LangChain, and FAISS search.",
+    repoUrl: "https://github.com/vaibhavnagar02"
+  }
+];
+
+const experiences = [
+  {
+    role: "ML Engineer",
+    company: "Lumberfi",
+    period: "03/2024 - 06/2024",
+    location: "Bangalore",
+    points: [
+      "Helped deliver a fine-tuned LLM chatbot using Pinecone and Azure OpenAI to convert contracts into MVEL code.",
+      "Learned Docker and Kubernetes during Azure deployment stages.",
+      "Worked on extraction from complex union contracts and contractor files."
+    ]
+  },
+  {
+    role: "Full Stack Engineer",
+    company: "Yatra",
+    period: "02/2024 - 03/2024",
+    location: "Gurgaon",
+    points: [
+      "Built a channel manager product for lower-segment hotels across frontend and backend.",
+      "Worked on NanoCM, automated report generation, and dynamic mass emailer POCs.",
+      "Implemented email automation using SMTP, networking concepts, and Python modules."
+    ]
+  },
+  {
+    role: "AI/ML Engineer",
+    company: "Waisl",
+    period: "05/2023 - 01/2024",
+    location: "Delhi",
+    points: [
+      "Built a facial-recognition attendance system using computer vision, MongoDB, and MERN stack.",
+      "Contributed to ResumeGPT with LaMini Flan T5, LangChain, and FAISS integration.",
+      "Helped improve HR efficiency for recruitment workflows."
+    ]
+  },
+  {
+    role: "Data Scientist",
+    company: "thelightbulb.ai",
+    period: "06/2022 - 12/2022",
+    location: "Mumbai",
+    points: [
+      "Built an audio diarization solution using segmentation and HuBERT-based transformer classification.",
+      "Used Golang for efficient concurrent data processing in sentiment analysis tasks.",
+      "Worked with international clients including Warner Brothers on analysis and reporting."
+    ]
   }
 ];
 
 function applyProfile() {
-  document.title = `${profile.name} | Cybersecurity Portfolio`;
+  document.title = `${profile.name} | Portfolio`;
   document.getElementById("name-text").textContent = profile.name;
   document.getElementById("role-text").textContent = profile.role;
-  document.getElementById("bio-text").textContent = profile.shortBio;
-  document.getElementById("about-text").textContent = profile.about;
+  document.getElementById("bio-text").textContent = profile.bio;
   document.getElementById("footer-name").textContent = profile.name;
 
-  const brand = document.querySelector(".brand");
-  brand.textContent = profile.initials;
+  const resume = document.getElementById("resume-link");
+  const github = document.getElementById("github-link");
+  const linkedin = document.getElementById("linkedin-link");
+  const phone = document.getElementById("phone-link");
+  const email = document.getElementById("email-link");
+  const cGithub = document.getElementById("contact-github");
+  const cLinkedin = document.getElementById("contact-linkedin");
 
-  const resumeLink = document.getElementById("resume-link");
-  const githubLink = document.getElementById("github-link");
-  const projectsProfileLink = document.getElementById("projects-profile-link");
-  const linkedinLink = document.getElementById("linkedin-link");
-  const emailLink = document.getElementById("email-link");
+  resume.href = profile.resumeUrl;
+  github.href = profile.githubUrl;
+  linkedin.href = profile.linkedinUrl;
 
-  resumeLink.href = profile.resumeUrl;
-  githubLink.href = profile.githubUrl;
-  projectsProfileLink.href = profile.githubUrl;
-  linkedinLink.href = profile.linkedinUrl;
-  emailLink.href = `mailto:${profile.email}`;
-  emailLink.textContent = profile.email;
+  phone.href = `tel:${profile.phone.replace(/\s+/g, "")}`;
+  phone.textContent = `Phone: ${profile.phone}`;
+  email.href = `mailto:${profile.email}`;
+  email.textContent = `Email: ${profile.email}`;
 
-  const chips = document.getElementById("skills-chips");
-  profile.skills.forEach((skill) => {
-    const chip = document.createElement("span");
-    chip.textContent = skill;
-    chips.appendChild(chip);
-  });
+  cGithub.href = profile.githubUrl;
+  cGithub.textContent = "GitHub Profile";
+  cLinkedin.href = profile.linkedinUrl;
+  cLinkedin.textContent = "LinkedIn Profile";
 }
 
 function renderProjects() {
   const grid = document.getElementById("projects-grid");
-
-  projects.forEach((project) => {
+  projects.forEach((p) => {
     const card = document.createElement("article");
-    card.className = "project-card";
+    card.className = "card";
 
-    const title = document.createElement("h3");
-    title.textContent = project.title;
+    const h3 = document.createElement("h3");
+    h3.textContent = p.title;
 
-    const description = document.createElement("p");
-    description.textContent = project.description;
-
-    const tagWrap = document.createElement("div");
-    tagWrap.className = "tags";
-    project.tags.forEach((tag) => {
-      const tagEl = document.createElement("span");
-      tagEl.textContent = tag;
-      tagWrap.appendChild(tagEl);
-    });
+    const desc = document.createElement("p");
+    desc.textContent = p.description;
 
     const link = document.createElement("a");
-    link.href = project.repoUrl;
-    link.textContent = "View Repository";
+    link.href = p.repoUrl;
     link.target = "_blank";
     link.rel = "noreferrer";
+    link.textContent = "View Repository";
 
-    card.append(title, description, tagWrap, link);
+    card.append(h3, desc, link);
     grid.appendChild(card);
+  });
+}
+
+function renderTimeline() {
+  const timeline = document.getElementById("timeline");
+  experiences.forEach((exp) => {
+    const item = document.createElement("article");
+    item.className = "timeline-item";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = `${exp.role}, ${exp.company}`;
+
+    const meta = document.createElement("p");
+    meta.className = "meta";
+    meta.textContent = `${exp.period} | ${exp.location}`;
+
+    const ul = document.createElement("ul");
+    exp.points.forEach((point) => {
+      const li = document.createElement("li");
+      li.textContent = point;
+      ul.appendChild(li);
+    });
+
+    item.append(h3, meta, ul);
+    timeline.appendChild(item);
+  });
+}
+
+function renderInterests() {
+  const list = document.getElementById("interests-list");
+  profile.interests.forEach((interest) => {
+    const chip = document.createElement("span");
+    chip.textContent = interest;
+    list.appendChild(chip);
   });
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
 applyProfile();
 renderProjects();
+renderTimeline();
+renderInterests();
