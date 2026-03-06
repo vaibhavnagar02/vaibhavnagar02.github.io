@@ -4,18 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaibhav Nagar | Portfolio</title>
-  <meta name="description" content="Minimal black and red portfolio website." />
+  <meta name="description" content="Portfolio of Vaibhav Nagar" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-glow"></div>
+
   <header class="header">
     <div class="container nav-wrap">
       <a class="brand" href="#top">VN</a>
       <nav class="nav">
         <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#interests">Interests</a>
@@ -26,48 +29,52 @@
 
   <main id="top">
     <section id="profile" class="hero container">
-      <p class="eyebrow" id="role-text">AI/ML + Cybersecurity Engineer</p>
+      <p class="eyebrow" id="role-text">AI/ML Engineer | Cybersecurity Enthusiast</p>
       <h1 id="name-text">Vaibhav Nagar</h1>
       <p class="summary" id="bio-text">
-        Building practical AI systems and secure software. I enjoy solving real-world engineering problems across ML, backend, and product delivery.
+        I build practical AI systems and secure software with a strong product mindset.
       </p>
       <div class="hero-actions">
         <a id="resume-link" class="btn btn-primary" href="./Vaibhav_Nagar_Resume.pdf" download>Download Resume</a>
-        <a id="github-link" class="btn btn-outline" href="#" target="_blank" rel="noreferrer">GitHub</a>
-        <a id="linkedin-link" class="btn btn-outline" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a id="github-link" class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        <a id="linkedin-link" class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </section>
 
-    <section id="projects" class="section container">
+    <section id="education" class="section container">
       <div class="section-head">
-        <h2>Projects</h2>
-        <p>Small snapshots of what I build.</p>
+        <h2>Education</h2>
       </div>
-      <div id="projects-grid" class="grid"></div>
+      <article class="edu-card">
+        <h3>University of Sydney</h3>
+        <p id="edu-details">Currently studying in Sydney, focused on advanced computing, AI systems, and secure engineering practices.</p>
+      </article>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-head section-row">
+        <h2>Projects</h2>
+        <a id="see-all-projects" class="see-all" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">See All</a>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
     </section>
 
     <section id="experience" class="section container">
       <div class="section-head">
-        <h2>Work Experience</h2>
-        <p>Journey across teams, roles, and impact.</p>
+        <h2>Experience</h2>
+        <p>Scroll down to move through each internship.</p>
       </div>
-      <div id="timeline" class="timeline"></div>
+      <div id="experience-track" class="experience-track"></div>
     </section>
 
     <section id="interests" class="section container">
-      <div class="section-head">
-        <h2>Interests</h2>
-        <p>What I am currently exploring.</p>
-      </div>
+      <div class="section-head"><h2>Interests</h2></div>
       <div id="interests-list" class="chips"></div>
     </section>
 
     <section id="contact" class="section container">
-      <div class="section-head">
-        <h2>Contact Me</h2>
-        <p>Open to internships, full-time roles, and collaborations.</p>
-      </div>
-      <div class="contact-card">
+      <div class="section-head"><h2>Contact Me</h2></div>
+      <div class="contact-grid">
         <a id="phone-link" href="#"></a>
         <a id="email-link" href="#"></a>
         <a id="contact-linkedin" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
