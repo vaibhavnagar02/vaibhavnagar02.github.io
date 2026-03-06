@@ -1,36 +1,52 @@
 const profile = {
   name: "Vaibhav Nagar",
-  role: "AI/ML Engineer | Aspiring Cybersecurity Professional",
-  bio: "Building practical AI systems and secure software. I enjoy solving real-world engineering problems across ML, backend, and product delivery.",
+  role: "AI/ML Engineer | Cybersecurity Enthusiast",
+  bio: "Building practical AI systems, secure software, and production-ready products.",
   phone: "+61 0432199478",
   email: "vaibhavsinghnagar@gmail.com",
   githubUrl: "https://github.com/vaibhavnagar02",
   linkedinUrl: "https://www.linkedin.com/in/vaibhav-nagar2002/",
   resumeUrl: "./Vaibhav_Nagar_Resume.pdf",
+  education: "University of Sydney - Advanced studies in computing, AI systems, and secure engineering.",
   interests: [
+    "Applied AI",
     "Cybersecurity",
-    "LLM Applications",
     "MLOps",
     "Cloud Deployment",
     "System Design",
-    "Computer Vision"
+    "Product Engineering"
   ]
 };
 
 const projects = [
   {
     title: "Fine-Tuned LLM Contract Assistant",
-    description: "Built an LLM workflow to transform contract content into structured MVEL code for downstream product use.",
+    description: "Contract-to-MVEL transformation pipeline using Pinecone and Azure OpenAI.",
     repoUrl: "https://github.com/vaibhavnagar02"
   },
   {
     title: "Facial Recognition Attendance System",
-    description: "Developed a computer-vision attendance platform with MERN stack and MongoDB-backed reporting.",
+    description: "Computer vision attendance product with MERN stack and MongoDB reporting.",
     repoUrl: "https://github.com/vaibhavnagar02"
   },
   {
     title: "ResumeGPT",
-    description: "Contributed to an LLM-powered recruitment tool using LaMini Flan T5, LangChain, and FAISS search.",
+    description: "Recruitment assistant with LaMini Flan T5, LangChain, and FAISS search.",
+    repoUrl: "https://github.com/vaibhavnagar02"
+  },
+  {
+    title: "Hotel Channel Manager POC",
+    description: "Full stack channel manager concept for lower-segment hotel operations.",
+    repoUrl: "https://github.com/vaibhavnagar02"
+  },
+  {
+    title: "Automated Mass Emailer",
+    description: "SMTP + Python workflow for scalable business communication automation.",
+    repoUrl: "https://github.com/vaibhavnagar02"
+  },
+  {
+    title: "Audio Diarization & Sentiment Pipeline",
+    description: "Speech segmentation + transformer-based tone analysis with scalable processing.",
     repoUrl: "https://github.com/vaibhavnagar02"
   }
 ];
@@ -42,10 +58,11 @@ const experiences = [
     period: "03/2024 - 06/2024",
     location: "Bangalore",
     points: [
-      "Helped deliver a fine-tuned LLM chatbot using Pinecone and Azure OpenAI to convert contracts into MVEL code.",
-      "Learned Docker and Kubernetes during Azure deployment stages.",
-      "Worked on extraction from complex union contracts and contractor files."
-    ]
+      "Delivered a fine-tuned LLM chatbot using Pinecone and Azure OpenAI for contract-to-MVEL conversion.",
+      "Learned Docker and Kubernetes through Azure deployment work.",
+      "Handled complex extraction from union contracts and contractor files."
+    ],
+    learning: "How to ship LLM solutions in production pipelines, not just prototypes."
   },
   {
     role: "Full Stack Engineer",
@@ -53,10 +70,11 @@ const experiences = [
     period: "02/2024 - 03/2024",
     location: "Gurgaon",
     points: [
-      "Built a channel manager product for lower-segment hotels across frontend and backend.",
-      "Worked on NanoCM, automated report generation, and dynamic mass emailer POCs.",
-      "Implemented email automation using SMTP, networking concepts, and Python modules."
-    ]
+      "Built a full stack channel manager for lower-segment hotels.",
+      "Contributed to NanoCM, automated report generation, and dynamic mass emailer POCs.",
+      "Implemented SMTP-driven automation with Python and networking concepts."
+    ],
+    learning: "How to convert real business pain points into fast, practical product features."
   },
   {
     role: "AI/ML Engineer",
@@ -64,10 +82,11 @@ const experiences = [
     period: "05/2023 - 01/2024",
     location: "Delhi",
     points: [
-      "Built a facial-recognition attendance system using computer vision, MongoDB, and MERN stack.",
-      "Contributed to ResumeGPT with LaMini Flan T5, LangChain, and FAISS integration.",
-      "Helped improve HR efficiency for recruitment workflows."
-    ]
+      "Built facial recognition attendance system with computer vision, MongoDB, and MERN.",
+      "Worked on ResumeGPT using LaMini Flan T5, LangChain, and FAISS.",
+      "Improved recruitment process throughput using LLM-assisted workflows."
+    ],
+    learning: "How AI models create measurable operational impact when connected to workflows."
   },
   {
     role: "Data Scientist",
@@ -75,10 +94,11 @@ const experiences = [
     period: "06/2022 - 12/2022",
     location: "Mumbai",
     points: [
-      "Built an audio diarization solution using segmentation and HuBERT-based transformer classification.",
-      "Used Golang for efficient concurrent data processing in sentiment analysis tasks.",
-      "Worked with international clients including Warner Brothers on analysis and reporting."
-    ]
+      "Built audio diarization from scratch with segmentation and HuBERT transformer classification.",
+      "Used Golang for efficient concurrent processing in sentiment analysis workloads.",
+      "Worked directly with international clients including Warner Brothers."
+    ],
+    learning: "How to balance research depth with client-facing delivery and communication."
   }
 ];
 
@@ -87,6 +107,7 @@ function applyProfile() {
   document.getElementById("name-text").textContent = profile.name;
   document.getElementById("role-text").textContent = profile.role;
   document.getElementById("bio-text").textContent = profile.bio;
+  document.getElementById("edu-details").textContent = profile.education;
   document.getElementById("footer-name").textContent = profile.name;
 
   const resume = document.getElementById("resume-link");
@@ -96,75 +117,79 @@ function applyProfile() {
   const email = document.getElementById("email-link");
   const cGithub = document.getElementById("contact-github");
   const cLinkedin = document.getElementById("contact-linkedin");
+  const seeAll = document.getElementById("see-all-projects");
 
   resume.href = profile.resumeUrl;
   github.href = profile.githubUrl;
   linkedin.href = profile.linkedinUrl;
+  cGithub.href = profile.githubUrl;
+  cLinkedin.href = profile.linkedinUrl;
+  seeAll.href = profile.githubUrl;
 
   phone.href = `tel:${profile.phone.replace(/\s+/g, "")}`;
   phone.textContent = `Phone: ${profile.phone}`;
   email.href = `mailto:${profile.email}`;
   email.textContent = `Email: ${profile.email}`;
-
-  cGithub.href = profile.githubUrl;
-  cGithub.textContent = "GitHub Profile";
-  cLinkedin.href = profile.linkedinUrl;
-  cLinkedin.textContent = "LinkedIn Profile";
 }
 
 function renderProjects() {
   const grid = document.getElementById("projects-grid");
   projects.forEach((p) => {
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "project-card";
 
     const h3 = document.createElement("h3");
     h3.textContent = p.title;
 
-    const desc = document.createElement("p");
-    desc.textContent = p.description;
+    const d = document.createElement("p");
+    d.textContent = p.description;
 
-    const link = document.createElement("a");
-    link.href = p.repoUrl;
-    link.target = "_blank";
-    link.rel = "noreferrer";
-    link.textContent = "View Repository";
+    const a = document.createElement("a");
+    a.href = p.repoUrl;
+    a.target = "_blank";
+    a.rel = "noreferrer";
+    a.textContent = "View Repo";
 
-    card.append(h3, desc, link);
+    card.append(h3, d, a);
     grid.appendChild(card);
   });
 }
 
-function renderTimeline() {
-  const timeline = document.getElementById("timeline");
-  experiences.forEach((exp) => {
-    const item = document.createElement("article");
-    item.className = "timeline-item";
+function renderExperience() {
+  const track = document.getElementById("experience-track");
+  experiences.forEach((e) => {
+    const card = document.createElement("article");
+    card.className = "exp-card";
 
-    const h3 = document.createElement("h3");
-    h3.textContent = `${exp.role}, ${exp.company}`;
+    const head = document.createElement("div");
+    head.className = "exp-head";
+    head.innerHTML = `<h3>${e.role}, ${e.company}</h3><strong>${e.location}</strong>`;
 
     const meta = document.createElement("p");
-    meta.className = "meta";
-    meta.textContent = `${exp.period} | ${exp.location}`;
+    meta.className = "exp-meta";
+    meta.textContent = e.period;
 
     const ul = document.createElement("ul");
-    exp.points.forEach((point) => {
+    e.points.forEach((point) => {
       const li = document.createElement("li");
       li.textContent = point;
       ul.appendChild(li);
     });
 
-    item.append(h3, meta, ul);
-    timeline.appendChild(item);
+    const learnBox = document.createElement("div");
+    learnBox.className = "learn-box";
+    learnBox.innerHTML = `<h4>Key Learning</h4><p>${e.learning}</p>`;
+
+    card.append(head, meta, ul, learnBox);
+    track.appendChild(card);
   });
 }
 
 function renderInterests() {
   const list = document.getElementById("interests-list");
-  profile.interests.forEach((interest) => {
+  profile.interests.forEach((item) => {
     const chip = document.createElement("span");
-    chip.textContent = interest;
+    chip.textContent = item;
     list.appendChild(chip);
   });
 }
@@ -172,5 +197,5 @@ function renderInterests() {
 document.getElementById("year").textContent = new Date().getFullYear();
 applyProfile();
 renderProjects();
-renderTimeline();
+renderExperience();
 renderInterests();
