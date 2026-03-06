@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio website built with GitHub Pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header container">
+    <a class="brand" href="#top">YN</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="kicker" id="role-text">Cybersecurity Student</p>
+      <h1>
+        <span id="name-text">Your Name</span>
+        <em>building secure systems</em>
+      </h1>
+      <p class="lead" id="bio-text">
+        I focus on practical security: threat modeling, secure coding, and incident response.
+        I enjoy turning complex technical risks into clear solutions.
+      </p>
+      <div class="hero-actions">
+        <a id="resume-link" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">View Resume</a>
+        <a id="github-link" class="btn btn-secondary" href="#" target="_blank" rel="noreferrer">GitHub Profile</a>
+      </div>
+    </section>
+
+    <section id="about" class="about container reveal">
+      <h2>About</h2>
+      <p id="about-text">
+        I am currently developing my cybersecurity skills through hands-on labs, CTF practice,
+        and real-world scripting projects. I enjoy offensive security testing and defensive
+        architecture improvements.
+      </p>
+      <div class="chips" id="skills-chips"></div>
+    </section>
+
+    <section id="projects" class="projects container reveal">
+      <div class="section-heading">
+        <h2>Selected Projects</h2>
+        <a id="projects-profile-link" href="#" target="_blank" rel="noreferrer">See all on GitHub</a>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+    </section>
+
+    <section id="contact" class="contact container reveal">
+      <h2>Contact</h2>
+      <p>Open to internships, grad roles, and cybersecurity collaborations.</p>
+      <div class="contact-links">
+        <a id="email-link" href="mailto:you@example.com">you@example.com</a>
+        <a id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> <span id="footer-name">Your Name</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
