@@ -1,136 +1,133 @@
-const GITHUB_USERNAME = "vaibhavnagar02";
-const LINKEDIN_URL = "https://www.linkedin.com/in/vaibhav-nagar2002/";
-
-const timelineData = [
+const topProjects = [
   {
-    period: "2022 - 2023",
-    title: "Foundation in AI/ML and Data Science",
-    details: "Built strong fundamentals in Python, statistics, ML algorithms, and data preprocessing through academic and personal projects.",
-    learning: "Learned that clean data pipelines and feature engineering often matter more than complex models."
+    title: "LLM Contract-to-MVEL Automation",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+    description:
+      "Built a fine-tuned LLM chatbot workflow that converts complex contract language into MVEL code for downstream product integrations. The system was designed to support multiple affiliated companies with domain-specific requirements, retrieval-backed responses, and production-oriented reliability.",
+    stack: ["Azure OpenAI", "Pinecone", "Prompt Engineering", "LLM Fine-Tuning"],
+    link: "https://github.com/vaibhavnagar02"
   },
   {
-    period: "2023 - 2024",
-    title: "Applied Projects and Model Development",
-    details: "Worked on practical AI/ML projects, model training workflows, and end-to-end experimentation for real use cases.",
-    learning: "Improved at choosing metrics based on business goals rather than only model accuracy."
+    title: "ResumeGPT Recruitment Intelligence",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1400&q=80",
+    description:
+      "Contributed to ResumeGPT, an LLM-powered recruitment product built with LaMini Flan T5 and LangChain. Implemented FAISS-based retrieval and structured resume analysis pipelines to accelerate HR screening workflows and improve candidate shortlisting quality at scale.",
+    stack: ["LaMini Flan T5", "LangChain", "FAISS", "NLP"],
+    link: "https://github.com/vaibhavnagar02"
   },
   {
-    period: "2024 - Present",
-    title: "Engineering-Focused AI Development",
-    details: "Focused on building deployable, maintainable AI systems with emphasis on reproducibility, scaling, and impact.",
-    learning: "Shipping reliable solutions requires MLOps mindset, versioning, monitoring, and iterative improvement."
+    title: "Facial Recognition Attendance Platform",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
+    description:
+      "Developed a full attendance platform using facial recognition and MERN stack architecture. Built end-to-end flow from detection and recognition to MongoDB-backed attendance records and a web dashboard for monitoring, reporting, and operational use.",
+    stack: ["Computer Vision", "MERN Stack", "MongoDB", "Deployment"],
+    link: "https://github.com/vaibhavnagar02"
   }
 ];
 
-function el(tag, className, html) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (html) node.innerHTML = html;
-  return node;
-}
-
-async function loadGitHubProfile() {
-  try {
-    const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
-    if (!res.ok) throw new Error("Profile fetch failed");
-    const profile = await res.json();
-
-    const name = document.getElementById("name");
-    const avatar = document.getElementById("avatar");
-    const bio = document.getElementById("bio");
-
-    if (profile.name) name.textContent = profile.name;
-    if (profile.avatar_url) avatar.src = profile.avatar_url;
-    if (profile.bio) bio.textContent = profile.bio;
-  } catch (err) {
-    console.error(err);
+const experienceTimeline = [
+  {
+    date: "06/2022 – 12/2022 | Mumbai",
+    company: "thelightbulb.ai",
+    role: "Data Scientist",
+    summary:
+      "Built an audio diarization pipeline from scratch using audio segmentation and HuBERT transformer-based tone analysis. Also worked with Golang for concurrent sentiment-analysis workflows and interacted with international clients including Warner Brothers for analytics reporting.",
+    learning:
+      "Learned how to combine research-oriented models with client-facing delivery: model quality, system performance, and reporting clarity must move together."
+  },
+  {
+    date: "05/2023 – 01/2024 | Delhi",
+    company: "Waisl",
+    role: "AI/ML Engineer",
+    summary:
+      "Built a facial-recognition attendance system with Computer Vision, MongoDB, and MERN stack. Contributed to ResumeGPT using LaMini Flan T5 + LangChain with FAISS-based retrieval, helping improve recruitment efficiency significantly.",
+    learning:
+      "Learned to translate advanced AI ideas into usable products by balancing accuracy, UX, and deployment constraints."
+  },
+  {
+    date: "02/2024 – 03/2024 | Gurgaon",
+    company: "Yatra",
+    role: "Full Stack Engineer",
+    summary:
+      "Worked on channel-manager products for lower-segment hotels across frontend and backend. Built business-focused tools and POCs such as NanoCM, automated report generation, dynamic mass emailer, and SMTP-based email automation pipelines.",
+    learning:
+      "Learned that strong product engineering starts from business pain points, then maps to scalable and automatable technical design."
+  },
+  {
+    date: "03/2024 – 06/2024 | Bangalore",
+    company: "Lumberfi",
+    role: "ML Engineer",
+    summary:
+      "Worked on a fine-tuned LLM chatbot using Pinecone and Azure OpenAI to convert contracts into MVEL code. Handled complex data extraction from union contracts and contractor files, and supported deployment stages with Docker and Kubernetes on Azure.",
+    learning:
+      "Learned production ML discipline: data complexity, retrieval quality, and deployment architecture are equally critical for real-world impact."
   }
-}
+];
 
-async function loadGitHubProjects() {
-  const grid = document.getElementById("projectsGrid");
-  grid.innerHTML = `<p>Loading projects...</p>`;
+function renderProjects() {
+  const wrap = document.getElementById("topProjects");
+  if (!wrap) return;
 
-  try {
-    const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`
-    );
-    if (!res.ok) throw new Error("Repo fetch failed");
-
-    const repos = await res.json();
-    const top6 = repos
-      .filter((r) => !r.fork)
-      .sort((a, b) => (b.stargazers_count + b.forks_count) - (a.stargazers_count + a.forks_count))
-      .slice(0, 6);
-
-    if (!top6.length) {
-      grid.innerHTML = `<p>No public repositories found.</p>`;
-      return;
-    }
-
-    grid.innerHTML = "";
-    top6.forEach((repo) => {
-      const card = el("article", "project-card");
-      const imageUrl = `https://opengraph.githubassets.com/${repo.id}/${repo.full_name}`;
-
-      card.innerHTML = `
-        <img src="${imageUrl}" alt="${repo.name} preview" loading="lazy" />
-        <div class="project-content">
-          <h3>${repo.name}</h3>
-          <p>${repo.description ? repo.description : "No description provided."}</p>
-          <div class="project-meta">★ ${repo.stargazers_count} • ${repo.language || "Codebase"}</div>
-          <p><a href="${repo.html_url}" target="_blank" rel="noreferrer">Open Project</a></p>
+  wrap.innerHTML = "";
+  topProjects.forEach((project) => {
+    const card = document.createElement("article");
+    card.className = "project-card";
+    card.innerHTML = `
+      <img class="project-image" src="${project.image}" alt="${project.title}" loading="lazy" />
+      <div class="project-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="project-meta">
+          ${project.stack.map((s) => `<span class="tag">${s}</span>`).join("")}
         </div>
-      `;
-      grid.appendChild(card);
-    });
-  } catch (err) {
-    console.error(err);
-    grid.innerHTML = `<p>Unable to load projects right now. Please try again later.</p>`;
-  }
-}
-
-function renderTimeline() {
-  const list = document.getElementById("timelineList");
-  list.innerHTML = "";
-
-  timelineData.forEach((item) => {
-    const row = el("div", "timeline-item");
-    row.innerHTML = `
-      <div class="timeline-main">
-        <h4>${item.period} • ${item.title}</h4>
-        <p>${item.details}</p>
-      </div>
-      <div class="timeline-learning">
-        <h4>Key Learning</h4>
-        <p>${item.learning}</p>
+        <p><a class="btn ghost" href="${project.link}" target="_blank" rel="noreferrer">Open Project</a></p>
       </div>
     `;
-    list.appendChild(row);
+    wrap.appendChild(card);
   });
 }
 
-function setStaticLinks() {
-  const emailLink = document.getElementById("emailLink");
-  const phoneLink = document.getElementById("phoneLink");
+function renderTimeline() {
+  const wrap = document.getElementById("timelineWrap");
+  if (!wrap) return;
 
-  // Replace with your real details from resume.
+  wrap.innerHTML = "";
+  experienceTimeline.forEach((item) => {
+    const row = document.createElement("article");
+    row.className = "timeline-item";
+    row.innerHTML = `
+      <div class="timeline-main">
+        <h3>${item.role} • ${item.company}</h3>
+        <p><strong>${item.date}</strong></p>
+        <p>${item.summary}</p>
+      </div>
+      <div class="timeline-learning">
+        <h3>Key Learning</h3>
+        <p>${item.learning}</p>
+      </div>
+    `;
+    wrap.appendChild(row);
+  });
+}
+
+function setContact() {
   const email = "your-email@example.com";
   const phone = "+61 0000 000 000";
 
-  emailLink.href = `mailto:${email}`;
-  emailLink.textContent = email;
+  const emailLink = document.getElementById("emailLink");
+  const phoneLink = document.getElementById("phoneLink");
 
-  phoneLink.href = `tel:${phone.replace(/\s/g, "")}`;
-  phoneLink.textContent = phone;
+  if (emailLink) {
+    emailLink.href = `mailto:${email}`;
+    emailLink.textContent = email;
+  }
 
-  const linkedInAnchors = [...document.querySelectorAll('a[href*="linkedin.com"]')];
-  linkedInAnchors.forEach((a) => (a.href = LINKEDIN_URL));
+  if (phoneLink) {
+    phoneLink.href = `tel:${phone.replace(/\s/g, "")}`;
+    phoneLink.textContent = phone;
+  }
 }
 
-(async function init() {
-  setStaticLinks();
-  renderTimeline();
-  await loadGitHubProfile();
-  await loadGitHubProjects();
-})();
+renderProjects();
+renderTimeline();
+setContact();
