@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaibhav Nagar | Portfolio</title>
+  <title>Vaibhav Nagar | AI/ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -13,9 +13,9 @@
   <div class="bg-grid"></div>
 
   <header class="nav">
-    <div class="brand">VN<span>.</span></div>
+    <a class="logo" href="#top">VN<span>.</span></a>
     <nav>
-      <a href="#profile">Profile</a>
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#timeline">Timeline</a>
       <a href="#interests">Interests</a>
@@ -23,63 +23,65 @@
     </nav>
   </header>
 
-  <main class="wrap">
-    <section id="profile" class="card hero">
-      <div>
-        <p class="tag">AI/ML Engineer • Data Scientist</p>
-        <h1 id="name">Vaibhav Nagar</h1>
-        <p id="bio">
-          Building intelligent systems with machine learning, data science, and practical problem solving.
-        </p>
-        <div class="hero-links">
-          <a class="btn" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/vaibhav-nagar2002/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
+  <main id="top" class="container">
+    <section class="hero section">
+      <p class="pill">AI/ML Engineer • Data Scientist</p>
+      <h1>Vaibhav Nagar</h1>
+      <p class="hero-text">
+        Building practical AI systems, data-driven products, and scalable solutions across ML, full stack engineering, and automation.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/vaibhav-nagar2002/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="./Vaibhav_Nagar_Resume_AU.pdf" download>Download Resume</a>
       </div>
-      <div class="avatar-shell">
-        <img id="avatar" alt="Vaibhav Nagar profile photo" />
-      </div>
+    </section>
+
+    <section id="about" class="section card">
+      <h2>About Me</h2>
+      <p>
+        I am an AI/ML Engineer and Data Scientist focused on building intelligent products from research to deployment.
+        My work combines LLM applications, data extraction pipelines, full-stack implementation, and production readiness with tools like Docker, Kubernetes, and cloud services.
+      </p>
     </section>
 
     <section id="projects" class="section">
-      <div class="section-head">
-        <h2>Featured Projects</h2>
-        <p>Loaded directly from GitHub (latest 6)</p>
+      <h2>Top 3 Projects</h2>
+      <p class="sub">Detailed showcase. Edit descriptions anytime in <code>script.js</code> under <code>topProjects</code>.</p>
+      <div id="topProjects" class="project-list"></div>
+
+      <div class="more-projects card">
+        <h3>More Projects</h3>
+        <p>Explore all repositories on GitHub.</p>
+        <a class="btn ghost" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">View All Repositories</a>
       </div>
-      <div id="projectsGrid" class="projects-grid"></div>
     </section>
 
     <section id="timeline" class="section">
-      <div class="section-head">
-        <h2>Work Timeline</h2>
-        <p>Milestones and key learnings</p>
-      </div>
-      <div id="timelineList" class="timeline"></div>
+      <h2>Experience Timeline</h2>
+      <p class="sub">Company, role, duration, and key learnings.</p>
+      <div id="timelineWrap" class="timeline"></div>
     </section>
 
     <section id="interests" class="section">
-      <div class="section-head">
-        <h2>Interests</h2>
-      </div>
+      <h2>Interests</h2>
       <div class="chips">
-        <span>Machine Learning Systems</span>
-        <span>Generative AI</span>
+        <span>Large Language Models</span>
+        <span>Generative AI Products</span>
+        <span>Applied Machine Learning</span>
+        <span>Data Science for Business</span>
+        <span>MLOps and Deployment</span>
         <span>Computer Vision</span>
-        <span>NLP</span>
-        <span>Data Engineering</span>
-        <span>MLOps</span>
       </div>
     </section>
 
     <section id="contact" class="section card">
-      <div class="section-head">
-        <h2>Contact Me</h2>
-      </div>
+      <h2>Contact Me</h2>
       <div class="contact-grid">
         <a href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/vaibhav-nagar2002/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:your-email@example.com" id="emailLink">your-email@example.com</a>
-        <a href="tel:+61000000000" id="phoneLink">+61 0000 000 000</a>
+        <a id="emailLink" href="mailto:your-email@example.com">your-email@example.com</a>
+        <a id="phoneLink" href="tel:+61000000000">+61 0000 000 000</a>
       </div>
     </section>
   </main>
