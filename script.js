@@ -3,7 +3,7 @@ const topProjects = [
     title: "LLM Contract-to-MVEL Automation",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
     description:
-      "Built a fine-tuned LLM chatbot workflow that converts complex contract language into MVEL code for downstream product integrations. The system was designed to support multiple affiliated companies with domain-specific requirements, retrieval-backed responses, and production-oriented reliability.",
+      "Built a <strong>fine-tuned LLM chatbot workflow</strong> that converts complex contract language into <strong>MVEL code</strong> for downstream product integrations. The system supports multiple affiliated companies with <strong>domain-specific requirements</strong>, <strong>retrieval-backed responses</strong>, and production-level reliability.",
     stack: ["Azure OpenAI", "Pinecone", "Prompt Engineering", "LLM Fine-Tuning"],
     link: "https://github.com/vaibhavnagar02"
   },
@@ -11,7 +11,7 @@ const topProjects = [
     title: "ResumeGPT Recruitment Intelligence",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1400&q=80",
     description:
-      "Contributed to ResumeGPT, an LLM-powered recruitment product built with LaMini Flan T5 and LangChain. Implemented FAISS-based retrieval and structured resume analysis pipelines to accelerate HR screening workflows and improve candidate shortlisting quality at scale.",
+      "Contributed to <strong>ResumeGPT</strong>, an LLM-powered recruitment product built with <strong>LaMini Flan T5</strong> and <strong>LangChain</strong>. Implemented <strong>FAISS-based retrieval</strong> and structured resume analysis pipelines to accelerate HR screening workflows and improve candidate shortlisting quality at scale.",
     stack: ["LaMini Flan T5", "LangChain", "FAISS", "NLP"],
     link: "https://github.com/vaibhavnagar02"
   },
@@ -19,7 +19,7 @@ const topProjects = [
     title: "Facial Recognition Attendance Platform",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
     description:
-      "Developed a full attendance platform using facial recognition and MERN stack architecture. Built end-to-end flow from detection and recognition to MongoDB-backed attendance records and a web dashboard for monitoring, reporting, and operational use.",
+      "Developed a full attendance platform using <strong>facial recognition</strong> and <strong>MERN stack architecture</strong>. Built the full flow from detection and recognition to <strong>MongoDB-backed attendance records</strong> and a dashboard for monitoring, reporting, and operational use.",
     stack: ["Computer Vision", "MERN Stack", "MongoDB", "Deployment"],
     link: "https://github.com/vaibhavnagar02"
   }
@@ -31,7 +31,7 @@ const experienceTimeline = [
     company: "thelightbulb.ai",
     role: "Data Scientist",
     summary:
-      "Built an audio diarization pipeline from scratch using audio segmentation and HuBERT transformer-based tone analysis. Also worked with Golang for concurrent sentiment-analysis workflows and interacted with international clients including Warner Brothers for analytics reporting.",
+      "Built an <strong>audio diarization pipeline</strong> from scratch using audio segmentation and <strong>HuBERT transformer-based tone analysis</strong>. Also worked with Golang for concurrent sentiment-analysis workflows and collaborated with international clients including Warner Brothers for analytics reporting.",
     learning:
       "Learned how to combine research-oriented models with client-facing delivery: model quality, system performance, and reporting clarity must move together."
   },
@@ -40,7 +40,7 @@ const experienceTimeline = [
     company: "Waisl",
     role: "AI/ML Engineer",
     summary:
-      "Built a facial-recognition attendance system with Computer Vision, MongoDB, and MERN stack. Contributed to ResumeGPT using LaMini Flan T5 + LangChain with FAISS-based retrieval, helping improve recruitment efficiency significantly.",
+      "Built a <strong>facial-recognition attendance system</strong> with Computer Vision, MongoDB, and MERN stack. Contributed to ResumeGPT using <strong>LaMini Flan T5 + LangChain</strong> with <strong>FAISS-based retrieval</strong>, significantly improving recruitment efficiency.",
     learning:
       "Learned to translate advanced AI ideas into usable products by balancing accuracy, UX, and deployment constraints."
   },
@@ -49,7 +49,7 @@ const experienceTimeline = [
     company: "Yatra",
     role: "Full Stack Engineer",
     summary:
-      "Worked on channel-manager products for lower-segment hotels across frontend and backend. Built business-focused tools and POCs such as NanoCM, automated report generation, dynamic mass emailer, and SMTP-based email automation pipelines.",
+      "Worked on channel-manager products for lower-segment hotels across frontend and backend. Built business-focused tools and POCs such as <strong>NanoCM</strong>, <strong>automated report generation</strong>, <strong>dynamic mass emailer</strong>, and SMTP-based email automation pipelines.",
     learning:
       "Learned that strong product engineering starts from business pain points, then maps to scalable and automatable technical design."
   },
@@ -58,7 +58,7 @@ const experienceTimeline = [
     company: "Lumberfi",
     role: "ML Engineer",
     summary:
-      "Worked on a fine-tuned LLM chatbot using Pinecone and Azure OpenAI to convert contracts into MVEL code. Handled complex data extraction from union contracts and contractor files, and supported deployment stages with Docker and Kubernetes on Azure.",
+      "Worked on a <strong>fine-tuned LLM chatbot</strong> using Pinecone and Azure OpenAI to convert contracts into <strong>MVEL code</strong>. Handled complex data extraction from union contracts and contractor files, and supported deployment with <strong>Docker</strong> and <strong>Kubernetes</strong> on Azure.",
     learning:
       "Learned production ML discipline: data complexity, retrieval quality, and deployment architecture are equally critical for real-world impact."
   }
