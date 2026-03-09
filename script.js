@@ -136,43 +136,17 @@ function renderTimeline() {
 
 function setContact() {
   const email = "vaibhavsinghnagar@gmail.com";
-  const phone = "+61 0432 199 478";
+  const phone = "+61 432 199 478";
   const emailLink = document.getElementById("emailLink");
   const phoneLink = document.getElementById("phoneLink");
-  const modal = document.getElementById("contactModal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
-  const modalCallLink = document.getElementById("modalCallLink");
-  const modalEmailLink = document.getElementById("modalEmailLink");
-
-  if (emailLink) { emailLink.textContent = email; }
-  if (phoneLink) { phoneLink.textContent = phone; }
-  if (modalCallLink) { modalCallLink.href = `tel:${phone.replace(/\s/g, "")}`; }
-  if (modalEmailLink) { modalEmailLink.href = `mailto:${email}`; }
-
-  const openModal = (event) => {
-    event.preventDefault();
-    if (!modal) return;
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-  };
-
-  const closeModal = () => {
-    if (!modal) return;
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-  };
-
-  if (emailLink) { emailLink.addEventListener("click", openModal); }
-  if (phoneLink) { phoneLink.addEventListener("click", openModal); }
-  if (closeModalBtn) { closeModalBtn.addEventListener("click", closeModal); }
-  if (modal) {
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) closeModal();
-    });
+  if (emailLink) {
+    emailLink.href = `mailto:${email}`;
+    emailLink.textContent = email;
   }
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
-  });
+  if (phoneLink) {
+    phoneLink.href = `tel:${phone.replace(/\s/g, "")}`;
+    phoneLink.textContent = phone;
+  }
 }
 
 renderProjects();
