@@ -67,7 +67,6 @@ const experienceTimeline = [
 function renderProjects() {
   const wrap = document.getElementById("topProjects");
   if (!wrap) return;
-
   wrap.innerHTML = "";
   topProjects.forEach((project) => {
     const card = document.createElement("article");
@@ -90,7 +89,6 @@ function renderProjects() {
 function renderTimeline() {
   const wrap = document.getElementById("timelineWrap");
   if (!wrap) return;
-
   wrap.innerHTML = "";
   experienceTimeline.forEach((item) => {
     const row = document.createElement("article");
@@ -113,19 +111,10 @@ function renderTimeline() {
 function setContact() {
   const email = "your-email@example.com";
   const phone = "+61 0000 000 000";
-
   const emailLink = document.getElementById("emailLink");
   const phoneLink = document.getElementById("phoneLink");
-
-  if (emailLink) {
-    emailLink.href = `mailto:${email}`;
-    emailLink.textContent = email;
-  }
-
-  if (phoneLink) {
-    phoneLink.href = `tel:${phone.replace(/\s/g, "")}`;
-    phoneLink.textContent = phone;
-  }
+  if (emailLink) { emailLink.href = `mailto:${email}`; emailLink.textContent = email; }
+  if (phoneLink) { phoneLink.href = `tel:${phone.replace(/\s/g, "")}`; phoneLink.textContent = phone; }
 }
 
 renderProjects();
