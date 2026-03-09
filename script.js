@@ -1,11 +1,19 @@
 const topProjects = [
   {
-    title: "LLM Contract-to-MVEL Automation",
+    title: "Facial Recognition Attendance Platform",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
+    description:
+      "Developed a full attendance platform using <strong>facial recognition</strong> and <strong>MERN stack architecture</strong>. Built the full flow from detection and recognition to <strong>MongoDB-backed attendance records</strong> and a dashboard for monitoring, reporting, and operational use.",
+    stack: ["Computer Vision", "MERN Stack", "MongoDB", "Deployment"],
+    link: "https://github.com/vaibhavnagar02/AttendanceSystem"
+  },
+  {
+    title: "Florence-2 Auto Annotation Pipeline",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
     description:
-      "Built a <strong>fine-tuned LLM chatbot workflow</strong> that converts complex contract language into <strong>MVEL code</strong> for downstream product integrations. The system supports multiple affiliated companies with <strong>domain-specific requirements</strong>, <strong>retrieval-backed responses</strong>, and production-level reliability.",
-    stack: ["Azure OpenAI", "Pinecone", "Prompt Engineering", "LLM Fine-Tuning"],
-    link: "https://github.com/vaibhavnagar02"
+      "This project showcases a comprehensive pipeline for <strong>object detection</strong> using the <strong>Florence-2 model</strong>. It includes object detection inference, dataset handling, model training with <strong>Low-Rank Adaptation (LoRA)</strong>, and automated annotation workflows for both images and videos.",
+    stack: ["Florence-2", "Object Detection", "LoRA", "Auto Annotation"],
+    link: "https://github.com/vaibhavnagar02/Florence2-AutoAnnotation"
   },
   {
     title: "ResumeGPT Recruitment Intelligence",
@@ -13,36 +21,24 @@ const topProjects = [
     description:
       "Contributed to <strong>ResumeGPT</strong>, an LLM-powered recruitment product built with <strong>LaMini Flan T5</strong> and <strong>LangChain</strong>. Implemented <strong>FAISS-based retrieval</strong> and structured resume analysis pipelines to accelerate HR screening workflows and improve candidate shortlisting quality at scale.",
     stack: ["LaMini Flan T5", "LangChain", "FAISS", "NLP"],
-    link: "https://github.com/vaibhavnagar02"
-  },
-  {
-    title: "Facial Recognition Attendance Platform",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
-    description:
-      "Developed a full attendance platform using <strong>facial recognition</strong> and <strong>MERN stack architecture</strong>. Built the full flow from detection and recognition to <strong>MongoDB-backed attendance records</strong> and a dashboard for monitoring, reporting, and operational use.",
-    stack: ["Computer Vision", "MERN Stack", "MongoDB", "Deployment"],
-    link: "https://github.com/vaibhavnagar02"
+    link: ""
   }
 ];
 
 const experienceTimeline = [
   {
-    date: "06/2022 – 12/2022 | Mumbai",
-    company: "thelightbulb.ai",
-    role: "Data Scientist",
+    date: "03/2024 – 06/2024 | Bangalore",
+    company: "Lumberfi",
+    role: "ML Engineer",
     summary:
-      "Built an <strong>audio diarization pipeline</strong> from scratch using audio segmentation and <strong>HuBERT transformer-based tone analysis</strong>. Also worked with Golang for concurrent sentiment-analysis workflows and collaborated with international clients including Warner Brothers for analytics reporting.",
-    learning:
-      "Learned how to combine research-oriented models with client-facing delivery: model quality, system performance, and reporting clarity must move together."
-  },
-  {
-    date: "05/2023 – 01/2024 | Delhi",
-    company: "Waisl",
-    role: "AI/ML Engineer",
-    summary:
-      "Built a <strong>facial-recognition attendance system</strong> with Computer Vision, MongoDB, and MERN stack. Contributed to ResumeGPT using <strong>LaMini Flan T5 + LangChain</strong> with <strong>FAISS-based retrieval</strong>, significantly improving recruitment efficiency.",
-    learning:
-      "Learned to translate advanced AI ideas into usable products by balancing accuracy, UX, and deployment constraints."
+      "Worked on a <strong>fine-tuned LLM chatbot</strong> using Pinecone and Azure OpenAI to convert contracts into <strong>MVEL code</strong>. Handled complex data extraction from union contracts and contractor files, and supported deployment with <strong>Docker</strong> and <strong>Kubernetes</strong> on Azure.",
+    learningKeywords: [
+      "Production ML",
+      "Data Extraction",
+      "Retrieval Quality",
+      "Azure Deployment",
+      "Docker + Kubernetes"
+    ]
   },
   {
     date: "02/2024 – 03/2024 | Gurgaon",
@@ -50,17 +46,41 @@ const experienceTimeline = [
     role: "Full Stack Engineer",
     summary:
       "Worked on channel-manager products for lower-segment hotels across frontend and backend. Built business-focused tools and POCs such as <strong>NanoCM</strong>, <strong>automated report generation</strong>, <strong>dynamic mass emailer</strong>, and SMTP-based email automation pipelines.",
-    learning:
-      "Learned that strong product engineering starts from business pain points, then maps to scalable and automatable technical design."
+    learningKeywords: [
+      "Business-Driven Engineering",
+      "Product Thinking",
+      "Automation",
+      "Scalable Design",
+      "Full Stack Delivery"
+    ]
   },
   {
-    date: "03/2024 – 06/2024 | Bangalore",
-    company: "Lumberfi",
-    role: "ML Engineer",
+    date: "05/2023 – 01/2024 | Delhi",
+    company: "Waisl",
+    role: "AI/ML Engineer",
     summary:
-      "Worked on a <strong>fine-tuned LLM chatbot</strong> using Pinecone and Azure OpenAI to convert contracts into <strong>MVEL code</strong>. Handled complex data extraction from union contracts and contractor files, and supported deployment with <strong>Docker</strong> and <strong>Kubernetes</strong> on Azure.",
-    learning:
-      "Learned production ML discipline: data complexity, retrieval quality, and deployment architecture are equally critical for real-world impact."
+      "Built a <strong>facial-recognition attendance system</strong> with Computer Vision, MongoDB, and MERN stack. Contributed to ResumeGPT using <strong>LaMini Flan T5 + LangChain</strong> with <strong>FAISS-based retrieval</strong>, significantly improving recruitment efficiency.",
+    learningKeywords: [
+      "Applied AI",
+      "Computer Vision",
+      "LLM Integration",
+      "Retrieval Pipelines",
+      "Product Execution"
+    ]
+  },
+  {
+    date: "06/2022 – 12/2022 | Mumbai",
+    company: "thelightbulb.ai",
+    role: "Data Scientist",
+    summary:
+      "Built an <strong>audio diarization pipeline</strong> from scratch using audio segmentation and <strong>HuBERT transformer-based tone analysis</strong>. Also worked with Golang for concurrent sentiment-analysis workflows and collaborated with international clients including Warner Brothers for analytics reporting.",
+    learningKeywords: [
+      "Audio Diarization",
+      "HuBERT Transformers",
+      "Concurrent Golang Pipelines",
+      "Client Delivery",
+      "Analytics Reporting"
+    ]
   }
 ];
 
@@ -79,7 +99,11 @@ function renderProjects() {
         <div class="project-meta">
           ${project.stack.map((s) => `<span class="tag">${s}</span>`).join("")}
         </div>
-        <p><a class="btn ghost" href="${project.link}" target="_blank" rel="noreferrer">Open Project</a></p>
+        <p>${
+          project.link
+            ? `<a class="btn ghost" href="${project.link}" target="_blank" rel="noreferrer">Open Project</a>`
+            : `<span class="tag">Private company project</span>`
+        }</p>
       </div>
     `;
     wrap.appendChild(card);
@@ -101,7 +125,9 @@ function renderTimeline() {
       </div>
       <div class="timeline-learning">
         <h3>Key Learning</h3>
-        <p>${item.learning}</p>
+        <div class="learning-tags">
+          ${(item.learningKeywords || []).map((keyword) => `<span class="learning-tag">${keyword}</span>`).join("")}
+        </div>
       </div>
     `;
     wrap.appendChild(row);
@@ -109,12 +135,44 @@ function renderTimeline() {
 }
 
 function setContact() {
-  const email = "your-email@example.com";
-  const phone = "+61 0000 000 000";
+  const email = "vaibhavsinghnagar@gmail.com";
+  const phone = "+61 0432 199 478";
   const emailLink = document.getElementById("emailLink");
   const phoneLink = document.getElementById("phoneLink");
-  if (emailLink) { emailLink.href = `mailto:${email}`; emailLink.textContent = email; }
-  if (phoneLink) { phoneLink.href = `tel:${phone.replace(/\s/g, "")}`; phoneLink.textContent = phone; }
+  const modal = document.getElementById("contactModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const modalCallLink = document.getElementById("modalCallLink");
+  const modalEmailLink = document.getElementById("modalEmailLink");
+
+  if (emailLink) { emailLink.textContent = email; }
+  if (phoneLink) { phoneLink.textContent = phone; }
+  if (modalCallLink) { modalCallLink.href = `tel:${phone.replace(/\s/g, "")}`; }
+  if (modalEmailLink) { modalEmailLink.href = `mailto:${email}`; }
+
+  const openModal = (event) => {
+    event.preventDefault();
+    if (!modal) return;
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+  };
+
+  if (emailLink) { emailLink.addEventListener("click", openModal); }
+  if (phoneLink) { phoneLink.addEventListener("click", openModal); }
+  if (closeModalBtn) { closeModalBtn.addEventListener("click", closeModal); }
+  if (modal) {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeModal();
+  });
 }
 
 renderProjects();

@@ -19,6 +19,7 @@
       <a href="#projects">Projects</a>
       <a href="#timeline">Timeline</a>
       <a href="#interests">Interests</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -39,7 +40,7 @@
           </div>
         </div>
         <div class="hero-photo">
-          <img src="./Images/project-1.jpg" alt="Vaibhav Nagar portrait" />
+          <img src="./Screenshot%202026-03-09%20at%2011.30.07.png" alt="Vaibhav Nagar portrait" />
         </div>
       </div>
     </section>
@@ -47,8 +48,8 @@
     <section id="about" class="section card">
       <h2>About Me</h2>
       <p>
-        I am an <strong>AI/ML Engineer</strong> and <strong>Data Scientist</strong> focused on building intelligent products from <strong>research to deployment</strong>.
-        My work combines <strong>LLM applications</strong>, <strong>data extraction pipelines</strong>, <strong>full-stack implementation</strong>, and <strong>production readiness</strong> with Docker, Kubernetes, and cloud services.
+        I am an <strong>avid learner</strong> who consistently keeps up with the industry, and I enjoy <strong>working with teams</strong> to break down problems and build practical solutions.
+        I have gained experience building <strong>scalable products</strong> for both <strong>startups and MNCs</strong> using <strong>AI/ML, LLM applications, data pipelines, full-stack systems, Docker, Kubernetes, and cloud platforms</strong>. Even when I do not know everything on day one, I stay solution-focused and figure things out quickly.
       </p>
     </section>
 
@@ -60,7 +61,9 @@
       <div class="more-projects card">
         <h3>More Projects</h3>
         <p>Explore all repositories on GitHub.</p>
-        <a class="btn ghost" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">View All Repositories</a>
+        <div class="more-project-actions">
+          <a class="btn ghost" href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">View All Repositories</a>
+        </div>
       </div>
     </section>
 
@@ -73,19 +76,44 @@
     <section id="interests" class="section">
       <h2>Interests</h2>
       <div class="chips">
+        <span>Data-Driven Decision Making</span>
+        <span>Business Problem Solving</span>
+        <span>Product Thinking</span>
+        <span>Execution and Delivery</span>
+        <span>Cross-Functional Collaboration</span>
+        <span>Stakeholder Communication</span>
+        <span>Hiking</span>
+        <span>Adventurous Sports</span>
         <span>Marathon Running</span>
         <span>Strength Training</span>
-        <span>High-Performance Mindset</span>
-        <span>Public Speaking</span>
-        <span>Meaningful Networking</span>
-        <span>Disciplined Execution</span>
         <span>Generative AI Products</span>
         <span>Applied Machine Learning</span>
         <span>MLOps and Deployment</span>
       </div>
       <p class="interests-note">
-        Outside work, I run <strong>marathons</strong>, stay consistent in the <strong>gym</strong>, and enjoy staying active and mobile. I genuinely like to <strong>talk to people</strong>, build strong professional relationships, and bring the same <strong>work ethic and discipline</strong> from training into every project I take on.
+        I enjoy working at the intersection of <strong>data and business</strong>, where insights can be translated into practical outcomes. I like collaborating with teams, contributing with a <strong>solution-first mindset</strong>, and continuously improving through hands-on work. Outside work, I enjoy <strong>hiking</strong>, <strong>adventurous sports</strong>, running <strong>marathons</strong>, and training in the <strong>gym</strong>, while staying social and connected with people.
       </p>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <p class="sub">Academic foundation in advanced computing and data science.</p>
+      <div class="edu-list">
+        <article class="edu-card">
+          <img class="edu-logo" src="./USYD%20Logo.png" alt="University of Sydney logo" />
+          <div class="edu-content">
+            <h3><strong>Master of Advanced Computer Science</strong></h3>
+            <p><strong>University of Sydney</strong> | <strong>Feb 2025 - Present</strong></p>
+          </div>
+        </article>
+        <article class="edu-card">
+          <img class="edu-logo" src="./MUJ%20Logo.png" alt="Manipal University Jaipur logo" />
+          <div class="edu-content">
+            <h3><strong>Bachelor's in Data Science</strong></h3>
+            <p><strong>2020 - 2024</strong></p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="contact" class="section card">
@@ -93,11 +121,23 @@
       <div class="contact-grid">
         <a href="https://github.com/vaibhavnagar02" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/vaibhav-nagar2002/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a id="emailLink" href="mailto:your-email@example.com">your-email@example.com</a>
-        <a id="phoneLink" href="tel:+61000000000">+61 0000 000 000</a>
+        <a id="emailLink" href="#">vaibhavsinghnagar@gmail.com</a>
+        <a id="phoneLink" href="#">+61 0432 199 478</a>
       </div>
     </section>
   </main>
+
+  <div id="contactModal" class="modal-overlay" aria-hidden="true">
+    <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <h3 id="contactModalTitle">Choose Action</h3>
+      <p>How would you like to connect?</p>
+      <div class="modal-actions">
+        <a id="modalCallLink" class="btn ghost" href="#">Call</a>
+        <a id="modalEmailLink" class="btn" href="#">Email</a>
+      </div>
+      <button id="closeModalBtn" class="modal-close" type="button" aria-label="Close">Close</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
